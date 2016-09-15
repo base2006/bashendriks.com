@@ -1,0 +1,159 @@
+// Design mobile first
+$white: #ffffff;
+$grey: #cccccc;
+$footer: #222222;
+$black: #000000;
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.full-height {
+    min-height: 100vh;
+}
+
+.quote {
+    font-family: 'Lora', serif;
+    text-align: center;
+    line-height: 1.4;
+}
+
+html, body {
+    background-color: $white;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+// HOME
+
+.home {
+    padding-top: 50vh;
+    .quote {
+        transform: translateY(-50%);
+    }
+}
+
+// ABOUT
+
+.about {
+    padding-top: 300px;
+    &:after {
+        content : "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url(../../img/bas3.jpg);
+        background-size: contain;
+        background-position: right top;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        opacity : 0.1;
+    }
+    div {
+        padding: 0;
+    }
+}
+
+// PROJECTS
+
+.projects {
+    .carousel-control {
+        background-image: none;
+    }
+}
+
+// CONTACT
+
+.contact {
+    padding-top: 200px;
+    z-index: 1;
+    margin-bottom: 60px;
+    background-color: $white;
+    .contact-form {
+        input[type='text'], input[type='email'], textarea {
+            margin-bottom: 20px;
+            padding: 5px 10px;
+            width: 100%;
+            outline: none;
+            resize: none;
+            transition: border 0.3s ease;
+        }
+        .g-recaptcha {
+            margin-bottom: 20px;
+        }
+        input[type='submit'] {
+            margin-bottom: 50px;
+            outline: none;
+        }
+        @include placeholder {
+            color: $grey;
+        }
+    }
+}
+
+footer {
+    background-color: $footer;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 0;
+    .copyright {
+        font-size: 0.8em;
+        color: $grey;
+
+    }
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
