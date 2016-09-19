@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function e($string) {
     return htmlentities($string, ENT_QUOTES, 'UTF-8', false);
@@ -6,17 +7,36 @@ function e($string) {
 
 $errors = [];
 
-if ($_POST && !empty($_POST)) {
-    $fields = array(
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'message' => $_POST['message']
-    );
+if (isset($_POST)) {
+    // Check if name is set
+    if (empty($_POST['name'])) {
+        $errors['name'] = 'Please fill in your name';
+    }
 
-    foreach ($fields as $field => $data) {
-        if (empty($data)) {
-            $errors[$field] = 'The ' . $field . ' field is required';
+    // Check if email is set
+    if (empty($_POST['email'])) {
+        $errors['email'] = 'Please fill in your email';
+    } else {
+        // Check if email is valid
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            $errors['email'] = 'Please enter a valid email address';
         }
+    }
+
+    // Check if a message is set
+    if (empty($_POST['message'])) {
+        $errors['message'] = 'Please enter a message to send';
+    }
+
+    if (!empty($errors)) {
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            echo json_encode($errors);
+            exit;
+        }
+
+        $errors_php = $errors;
+    } else {
+
     }
 }
 
@@ -117,36 +137,31 @@ if ($_POST && !empty($_POST)) {
             <p>
                 Feel free to leave me a message, just to say hi or to get in touch.
             </p>
-            <?php
-            if (!empty($errors)) {
-                foreach ($errors as $errorname => $error){
-                ?>
-                    <script type="text/javascript">
-                        jQuery('#<?= $errorname ?>').addClass('form-control-danger');
-                        jQuery('#<?= $errorname ?>').parent().addClass('has-danger');
-                        jQuery('#<?= $errorname ?>').parent().find('div.form-control-feedback').css('display', 'block');
-                    </script>
-                <?php
-                }
-            }
-            ?>
             <form class="contact-form" method="post">
+                <?php if (!empty($errors_php)) : ?>
+                    <div class="alert alert-danger" role="alert">
+                        <h3>Warning!</h3>
+                        <ul>
+                        <?php foreach ($errors as $errorname => $error) : ?>
+                            <li><?= $error ?></li>
+                        <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" id="name" placeholder="What's your name?" autocomplete="off" value="<?= ($_POST && !empty($_POST['name'])) ? e($_POST['name']) : '' ; ?>">
-                    <?php if (!empty($errors)) :?>
-                        <div class="form-control-feedback hide"><?= $errors['name'] ?></div>
-                    <?php endif; ?>
+                    <input type="text" class="form-control form-control-danger" name="name" id="name" placeholder="What's your name?" autocomplete="off" value="<?= ($_POST && !empty($_POST['name'])) ? e($_POST['name']) : '' ; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="What's your email?" autocomplete="off" value="<?= ($_POST && !empty($_POST['email'])) ? e($_POST['email']) : '' ; ?>">
+                    <input type="text" class="form-control form-control-danger" name="email" id="email" placeholder="What's your email?" autocomplete="off" value="<?= ($_POST && !empty($_POST['email'])) ? e($_POST['email']) : '' ; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea class="form-control" name="message" id="message" placeholder="Leave your message here"><?= ($_POST && !empty($_POST['message'])) ? e($_POST['message']) : '' ; ?></textarea>
+                    <textarea class="form-control form-control-danger" name="message" id="message" placeholder="Leave your message here"><?= ($_POST && !empty($_POST['message'])) ? e($_POST['message']) : '' ; ?></textarea>
                 </div>
 
                 <div class="g-recaptcha" data-sitekey="6LeMQhgTAAAAAG1Dl2Is8XzbMjIkMv3SETGfPqRw"></div>
