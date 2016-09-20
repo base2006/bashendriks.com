@@ -68,6 +68,11 @@ if (isset($_POST)) {
 
   </head>
   <body>
+    <!-- Check if JS is enabled -->
+    <noscript>
+        <meta HTTP-EQUIV="Refresh" CONTENT="0;URL=noJS.html">
+    </noscript>
+    <!-- End JS check -->
 
     <section class="container-fluid full-height relative home">
         <div class="container">
