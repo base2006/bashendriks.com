@@ -4,14 +4,19 @@ $grey: #cccccc;
 $black: #000000;
 
 $bg-color: #ffffff;
-$footer: #222222;
+$footer: #888888;
 
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+
+@mixin filter($filter) {
+    -webkit-filter: $filter;
+    filter: $filter;
 }
 
 .bold {
@@ -42,6 +47,10 @@ $footer: #222222;
     display: inline-block;
 }
 
+.flex {
+    display: flex;
+}
+
 .full-height {
     min-height: 100vh;
 }
@@ -57,6 +66,7 @@ html, body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     background-color: $bg-color;
+    height: 100%;
 }
 html {
     padding: 20px;
@@ -95,6 +105,7 @@ html {
     }
     div {
         padding: 0;
+        z-index: 2;
     }
 }
 
@@ -115,9 +126,11 @@ html {
     z-index: 1;
     margin-bottom: 60px;
     background-color: $bg-color;
+    .container {
+        padding: 0;
+    }
     .contact-form {
         input[type='text'], input[type='email'], textarea {
-            margin-bottom: 20px;
             padding: 5px 10px;
             width: 100%;
             outline: none;
@@ -134,9 +147,9 @@ html {
             transform:scale(0.86);
             transform-origin:0 0;
         }
-        input{
-            margin-bottom: 50px;
+        input[type="submit"]{
             outline: none;
+            transition: all 0.3s ease-in-out;
             &:before {
                 font-family: FontAwesome;
                 content: "\f0e0";
@@ -145,6 +158,9 @@ html {
                 width: 14px;
             }
         }
+        .form-control-feedback {
+            font-size: 14px;
+        }
         @include placeholder {
             color: $grey;
         }
@@ -152,16 +168,30 @@ html {
 }
 
 footer {
-    background-color: $footer;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     padding: 20px;
     z-index: 0;
     .copyright {
+        padding: 0;
         font-size: 0.8em;
-        color: $grey;
-
+        color: $footer;
+    }
+    .social {
+        padding: 0;
+        height: 19px;
+        .linkedin {
+            height: 100%;
+            width: 25px;
+            background-image: url(../../img/linkedin.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            float: right;
+            @include filter(grayscale(100%));
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                @include filter(grayscale(0%));
+            }
+        }
     }
 }
 
@@ -186,4 +216,12 @@ footer {
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 
+}
+
+
+// noscript page
+.noscript {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
