@@ -14,6 +14,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 
+    <!-- Menu css file -->
+    <link rel="stylesheet" href="css/component.css" media="screen" title="no title">
+
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/min/main.css" media="screen" title="no title">
 
@@ -21,4 +24,4 @@
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
   </head>
-  <body>
+  <body class="cbp-spmenu-push">

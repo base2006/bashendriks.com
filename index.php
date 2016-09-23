@@ -7,15 +7,29 @@
     <noscript>
         <meta HTTP-EQUIV="Refresh" CONTENT="0;URL=noJS.html">
     </noscript>
-    <!-- End JS check -->
+    <!-- /End JS check -->
 
-    <section class="container-fluid full-height relative home">
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menu" id="cbp-spmenu-s1">
+        <h3>Menu</h3>
+        <ul>
+            <li><a href="#home" class="nav-btn nav-home">home</a></li>
+            <li><a href="#about" class="nav-btn nav-about">about me</a></li>
+            <li><a href="#projects" class="nav-btn nav-projects">projects</a></li>
+            <li><a href="#contact" class="nav-btn nav-contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="buttonset">
+        <button id="showLeftPush" class="nav-toggle">&#9776;</button>
+    </div>
+
+    <section id="home" class="container-fluid full-height relative home">
         <div class="container">
-            <h2 class="v-center hide quote">"The main goal is not to complicate the already difficult life of the consumer." <span class="italic">- Raymond Loewy</span></h2>
+            <h2 class="v-center italic quote">"The main goal is not to complicate the already difficult life of the consumer." <span>- Raymond Loewy</span></h2>
         </div>
     </section>
 
-    <section class="container-fluid relative full-height about">
+    <section id="about" class="container-fluid relative full-height about">
         <div class="container">
             <div class="col-md-8">
                 <p>Hi, my name is Bas and I'm a front end developer from the south of the Netherlands.</p>
@@ -29,7 +43,7 @@
         </div>
     </section>
 
-    <section class="container full-height projects">
+    <section id="projects" class="container full-height projects">
         <h2>My Projects</h2>
         <p>These are some of my project I have worked on. If you have a question about them, leave me a message down below.</p>
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -73,7 +87,7 @@
 
     </section>
 
-    <section class="container-fluid relative contact">
+    <section id="contact" class="container-fluid relative contact">
         <div class="container">
             <h2>Say hi</h2>
             <p>Feel free to leave me a message, just to say hi or to get in touch.</p>

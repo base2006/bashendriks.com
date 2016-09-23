@@ -1,6 +1,39 @@
 $(document).ready(function(){
     $('.quote').delay(300).fadeIn(1000);
 
+    // Push menu
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+    showLeftPush = document.getElementById( 'showLeftPush' ),
+    body = document.body;
+
+    showLeftPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeftPush' );
+    };
+
+    $('.nav-btn').click(function(){
+        classie.toggle( showLeftPush, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeftPush' );
+    });
+
+    function disableOther( button ) {
+        if( button !== 'showLeftPush' ) {
+            classie.toggle( showLeftPush, 'enabled' );
+        }
+    }
+
+    // Menu animation
+    $('nav.menu').find('a').click(function(){
+        var href = $(this).attr('href');
+        var anchor = $(href).offset();
+        $('body').animate({ scrollTop: anchor.top }, 1000, 'swing');
+        return false;
+    });
+
     // Form validation
     $('form').submit(function(event) {
         // Stop the browser from submitting the form.
