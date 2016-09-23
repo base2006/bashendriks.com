@@ -133,7 +133,6 @@ nav.menu {
 .home {
     background-color: $bg-color;
     padding-top: 50vh;
-    z-index: 1;
     .quote {
         transform: translateY(-50%);
         span {
@@ -147,7 +146,6 @@ nav.menu {
 .about {
     background-color: $bg-color;
     padding-top: 300px;
-    z-index: 1;
     &:after {
         content : "";
         display: block;
@@ -172,23 +170,56 @@ nav.menu {
 
 .projects {
     background-color: $bg-color;
-    z-index: 1;
+    padding-top: 50px;
     .carousel-control {
         background-image: none;
+        width: 10%;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        span:before {
+            color: $main;
+        }
+        .icon-next, .icon-prev {
+            font-size: 50px;
+            margin-top: -25px;
+            text-shadow: none;
+        }
+        .icon-next {
+            margin-right: -20px;
+        }
+        .icon-prev {
+            margin-left: -20px;
+        }
+    }
+    .carousel-caption {
+        display: none;
+    }
+    .carousel-indicators {
+        bottom: -30px;
+        margin-bottom: 0;
+        li{
+            border-color: $main;
+            &.active {
+                background-color: $main;
+            }
+        }
     }
 }
 
 // CONTACT
 
 .contact {
-    padding-top: 200px;
-    z-index: 1;
-    margin-bottom: 60px;
+    padding-top: 50px;
+    margin-bottom: 20px;
     background-color: $bg-color;
     .container {
         padding: 0;
     }
     .contact-form {
+        padding: 0;
         input[type='text'], input[type='email'], textarea {
             padding: 5px 10px;
             width: 100%;
@@ -229,7 +260,6 @@ nav.menu {
 footer {
     width: 100%;
     padding: 20px;
-    z-index: 0;
     .copyright {
         padding: 0;
         font-size: 0.8em;
@@ -264,7 +294,19 @@ footer {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
+    .about:after {
+        height: 50%;
+        top: 45%;
+    }
+    .projects {
+        .carousel-caption {
+            display: block;
+        }
+    }
+    .contact {
+        min-height: 100vh;
+        margin-bottom: -60px;
+    }
 }
 
 // Large devices (desktops, 992px and up)
