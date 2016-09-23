@@ -91,7 +91,7 @@
         <div class="container">
             <h2>Say hi</h2>
             <p>Feel free to leave me a message, just to say hi or to get in touch.</p>
-            <form class="contact-form" action="validate.php" method="post">
+            <form class="col-md-6 contact-form" action="validate.php" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control form-control-success form-control-danger" name="name" id="name" placeholder="What's your name?" autocomplete="off" value="<?= ($_POST && !empty($_POST['name'])) ? e($_POST['name']) : '' ; ?>">
@@ -103,8 +103,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control form-control-success form-control-danger" name="message" id="message" placeholder="Leave your message here"><?= ($_POST && !empty($_POST['message'])) ? e($_POST['message']) : '' ; ?></textarea>
+                    <label for="message">Message</label><span class="countdown"></span>
+                    <textarea class="form-control form-control-success form-control-danger" name="message" id="message" maxlength="300" placeholder="Leave your message here"><?= ($_POST && !empty($_POST['message'])) ? e($_POST['message']) : '' ; ?></textarea>
                 </div>
 
                 <!-- <div class="g-recaptcha" data-sitekey="6LeMQhgTAAAAAG1Dl2Is8XzbMjIkMv3SETGfPqRw"></div> -->

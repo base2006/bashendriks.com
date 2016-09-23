@@ -72,7 +72,19 @@ $(document).ready(function(){
             $('.alert').text(data.error)
         });
     });
+
+    $(document).ready(function() {
+        updateCountdown();
+        $('#message').change(updateCountdown);
+        $('#message').keyup(updateCountdown);
+    });
 });
+
+function updateCountdown() {
+    // 300 is the max message length
+    var remaining = 300 - $('#message').val().length;
+    $('.countdown').text(remaining + '/300');
+}
 
 function resetErrors() {
     $('form input, form textarea').parent().removeClass('has-danger');
