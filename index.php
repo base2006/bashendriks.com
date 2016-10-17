@@ -88,10 +88,10 @@
     </section>
 
     <section id="contact" class="container-fluid relative contact">
-        <div class="container">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
             <h2>Say hi</h2>
             <p>Feel free to leave me a message, just to say hi or to get in touch.</p>
-            <form class="col-md-6 contact-form" action="validate.php" method="post">
+            <form class="contact-form" action="validate.php" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control form-control-success form-control-danger" name="name" id="name" placeholder="What's your name?" autocomplete="off" value="<?= ($_POST && !empty($_POST['name'])) ? e($_POST['name']) : '' ; ?>">
@@ -114,6 +114,7 @@
             </form>
         </div>
     </section>
+
 
     <footer>
         <div class="container">

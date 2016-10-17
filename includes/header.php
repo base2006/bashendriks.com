@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/component.css" media="screen" title="no title">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="css/min/main.css" media="screen" title="no title">
+    <link class="custom" rel="stylesheet" href="css/min/main.css" media="screen" title="no title">
 
     <!-- Google reCaptcha -->
     <script src='https://www.google.com/recaptcha/api.js'></script>

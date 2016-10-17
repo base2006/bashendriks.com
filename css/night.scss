@@ -1,10 +1,12 @@
 // Design mobile first
 $white: #ffffff;
-$grey: #cccccc;
-$black: #444444;
+$grey: lighten(#2c3e50, 10%);
+$black: #000000;
+$asphalt: #34495e;
+$midnight: #2c3e50;
 
-$main: #3498db;
-$bg-color: #ffffff;
+$main: #2ecc71;
+$bg-color: $midnight;
 $footer: #888888;
 
 
@@ -67,13 +69,13 @@ html, body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     height: 100%;
-    color: $black;
+    color: $white;
 }
 
 // MENU
 
 .buttonset {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(44,62,80,0.8);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -227,6 +229,7 @@ nav.menu {
             outline: none;
             resize: none;
             transition: border 0.3s ease;
+            background-color: $bg-color;
         }
         textarea {
             height: 150px;
@@ -250,7 +253,7 @@ nav.menu {
             }
         }
         .form-control {
-            color: $black;
+            color: $white;
         }
         .form-control-feedback {
             font-size: 14px;
@@ -290,6 +293,16 @@ footer {
                 @include filter(grayscale(0%));
             }
         }
+    }
+}
+
+nav.cbp-spmenu {
+    background-color: $asphalt;
+    h3 {
+        background: lighten($asphalt, 10%);
+    }
+    a {
+        border-bottom-color: lighten($asphalt, 10%);
     }
 }
 
