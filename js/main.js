@@ -1,40 +1,20 @@
 $(document).ready(function() {
-    $('.quote').delay(300).fadeIn(1000);
-
-    // Push menu
-    var menuLeft = document.getElementById('cbp-spmenu-s1'),
-        showLeftPush = document.getElementById('showLeftPush'),
-        body = document.body;
-
-    showLeftPush.onclick = function() {
-        classie.toggle(this, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
-        classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
-    };
-
-    $('.nav-btn').click(function() {
-        classie.toggle(showLeftPush, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
-        classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
+	//Menu button
+    $(".toggle").click(function() {
+        $(this).toggleClass("toggle-active");
+		$("nav").toggleClass("menu-bg");
     });
 
-    function disableOther(button) {
-        if (button !== 'showLeftPush') {
-            classie.toggle(showLeftPush, 'enabled');
-        }
+	// Scroll to
+	$('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 1000);
     }
-
-    // Menu animation
-    $('nav.menu').find('a').click(function() {
-        var href = $(this).attr('href');
-        var anchor = $(href).offset();
-        $('body').animate({
-            scrollTop: anchor.top
-        }, 1000, 'swing');
-        return false;
-    });
+});
 
     // Form validation
     $('form').submit(function(event) {
@@ -78,21 +58,6 @@ $(document).ready(function() {
     updateCountdown();
     $('#message').change(updateCountdown);
     $('#message').keyup(updateCountdown);
-
-    var currentTime = new Date().getHours();
-    
-    if (16 <= currentTime&&currentTime < 7) {
-        if ($('link[href="css/min/main.css"]').length) {
-            $('<link class="custom" rel="stylesheet" href="css/min/night.css" media="screen" title="no title">').appendTo($('head'));
-            $('link[href="css/min/main.css"]').remove();
-        }
-    }
-    if (7 <= currentTime&&currentTime < 16) {
-        if ($('link[href="css/min/night.css"]').length) {
-            $('<link class="custom" rel="stylesheet" href="css/min/main.css" media="screen" title="no title">').appendTo($('head'));
-            $('link[href="css/min/night.css"]').remove();
-        }
-    }
 
 });
 
