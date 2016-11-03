@@ -3,26 +3,24 @@ $(document).ready(function() {
 
     // Push menu
     var menuLeft = document.getElementById('cbp-spmenu-s1'),
-        showLeftPush = document.getElementById('showLeftPush'),
+        showLeft = document.getElementById('showLeft'),
         body = document.body;
 
-    showLeftPush.onclick = function() {
+    showLeft.onclick = function() {
         classie.toggle(this, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
         classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
+        disableOther('showLeft');
     };
 
     $('.nav-btn').click(function() {
-        classie.toggle(showLeftPush, 'active');
-        classie.toggle(body, 'cbp-spmenu-push-toright');
+        classie.toggle(showLeft, 'active');
         classie.toggle(menuLeft, 'cbp-spmenu-open');
-        disableOther('showLeftPush');
+        disableOther('showLeft');
     });
 
     function disableOther(button) {
-        if (button !== 'showLeftPush') {
-            classie.toggle(showLeftPush, 'enabled');
+        if (button !== 'showLeft') {
+            classie.toggle(showLeft, 'enabled');
         }
     }
 
@@ -80,7 +78,7 @@ $(document).ready(function() {
     $('#message').keyup(updateCountdown);
 
     var currentTime = new Date().getHours();
-    
+
     if (16 <= currentTime&&currentTime < 7) {
         if ($('link[href="css/min/main.css"]').length) {
             $('<link class="custom" rel="stylesheet" href="css/min/night.css" media="screen" title="no title">').appendTo($('head'));

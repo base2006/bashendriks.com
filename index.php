@@ -9,8 +9,12 @@
     </noscript>
     <!-- /End JS check -->
 
+	<div class="fl"></div>
+	<div class="fr"></div>
+	<div class="ft"></div>
+	<div class="fb"></div>
+
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menu" id="cbp-spmenu-s1">
-        <h3>Menu</h3>
         <ul>
             <li><a href="#home" class="nav-btn nav-home">home</a></li>
             <li><a href="#about" class="nav-btn nav-about">about me</a></li>
@@ -20,7 +24,10 @@
     </nav>
 
     <div class="buttonset">
-        <button id="showLeftPush" class="nav-toggle">&#9776;</button>
+        <button id="showLeft" class="nav-toggle">
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</button>
     </div>
 
     <section id="home" class="container-fluid full-height relative home">
