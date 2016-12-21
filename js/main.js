@@ -92,6 +92,26 @@ $(document).ready(function() {
         }
     }
 
+	$(window).scroll(function() {
+		var wScroll = $(this).scrollTop();
+
+		$('.welcome h2').css({
+			'transform' : 'translate(0px, ' + wScroll / 1.8 + '%)'
+		});
+
+		var topDivHeight = $(".home").height() + $('.about').height();
+		var viewPortSize = $(window).height();
+
+		var triggerAt = 300;
+		var triggerHeight = (topDivHeight - viewPortSize) + triggerAt;
+
+		if ($(window).scrollTop() >= triggerHeight) {
+			$('.project').each(function(r){
+				$(this).delay(r*500).fadeIn(1000);
+			});
+		}
+	});
+
 });
 
 function updateCountdown() {
