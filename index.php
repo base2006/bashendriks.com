@@ -50,7 +50,7 @@
 				<p>Feel free to say hi and leave me a message.</p>
 			</div>
 			<div class="col-xs-8 offset-xs-2 col-md-4 offset-md-0 face">
-				<img src="img/face.jpg" alt="Photo of me">
+				<img src="img/face.jpg" alt="Photo of me" class="box-shadow">
 			</div>
 		</div>
     </section>
@@ -64,22 +64,22 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6 col-md-4 project project-1">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 1" class="box-shadow">
 				</div>
 				<div class="col-xs-6 col-md-4 project project-2">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 2" class="box-shadow">
 				</div>
 				<div class="col-xs-6 col-md-4 project project-3">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 3" class="box-shadow">
 				</div>
 				<div class="col-xs-6 col-md-4 project project-4">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 4" class="box-shadow">
 				</div>
 				<div class="col-xs-6 col-md-4 project project-5">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 5" class="box-shadow">
 				</div>
 				<div class="col-xs-6 col-md-4 project project-6">
-					<img src="http://placehold.it/350" alt="Project 1">
+					<img src="http://placehold.it/350" alt="Project 6" class="box-shadow">
 				</div>
 			</div>
 		</div>
