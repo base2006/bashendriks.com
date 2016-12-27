@@ -43,7 +43,7 @@
 			<div class="col-xs-12 col-md-8">
 				<p>Hi, my name is Bas and I'm a front end developer from the south of the Netherlands.</p>
 
-				<p>Development and front end is what I do and love doing. My main languages of choice are PHP, HTML, SCSS and jQuery. I also know my way around Photoshop, Illustrator and Indesign. Development I prefer doing in <a href="https://atom.io/" target="_blank">Atom</a>.</p>
+				<p>Development and front end is what I love doing. My main languages of choice are PHP, HTML, SCSS and jQuery. I also know my way around Photoshop, Illustrator and Indesign. Development I prefer doing in <a href="https://atom.io/" target="_blank">Atom</a>.</p>
 
 				<p>In my spare time I love to go into the outdoors and hit some trails on my mountainbike. But on a rainy day I prefer the gym.</p>
 
