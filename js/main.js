@@ -40,16 +40,21 @@ $(document).ready(function() {
 		var wScroll = $(this).scrollTop();
 
 		$('.welcome h2').css({
-			'transform' : 'translate(0px, ' + wScroll / 1.8 + '%)'
+			'transform' : 'translate(0px, ' + wScroll / 1.6 + '%)'
 		});
 
-		var topDivHeight = $(".home").height() + $('.about').height();
 		var viewPortSize = $(window).height();
-
 		var triggerAt = 300;
-		var triggerHeight = (topDivHeight - viewPortSize) + triggerAt;
 
-		if ($(window).scrollTop() >= triggerHeight) {
+		var topDivs = $('.home').height() + $('.about').height();
+		var trigger1 = (topDivs - viewPortSize);
+		var trigger2 = (topDivs - viewPortSize) + triggerAt;
+
+		if ($(window).scrollTop() >= trigger1) {
+			$('.face').fadeTo(1000, 1);
+		}
+
+		if ($(window).scrollTop() >= trigger2) {
 			$('.project').each(function(r){
 				$(this).delay(r*500).fadeIn(1000);
 			});
@@ -97,22 +102,6 @@ $(document).ready(function() {
     updateCountdown();
     $('#message').change(updateCountdown);
     $('#message').keyup(updateCountdown);
-
-    var currentTime = new Date().getHours();
-
-    if (16 <= currentTime&&currentTime < 7) {
-        if ($('link[href="css/min/main.css"]').length) {
-            $('<link class="custom" rel="stylesheet" href="css/min/night.css" media="screen" title="no title">').appendTo($('head'));
-            $('link[href="css/min/main.css"]').remove();
-        }
-    }
-    if (7 <= currentTime&&currentTime < 16) {
-        if ($('link[href="css/min/night.css"]').length) {
-            $('<link class="custom" rel="stylesheet" href="css/min/main.css" media="screen" title="no title">').appendTo($('head'));
-            $('link[href="css/min/night.css"]').remove();
-        }
-    }
-
 
 });
 
