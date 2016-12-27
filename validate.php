@@ -31,8 +31,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die();
     }
 
-    echo json_encode(['success' => 'Thank you for your message. If necessary I\'ll get back to you as soon as possible']);
+    echo json_encode(['success' => 'Thank you for your message. If necessary I\'ll get back to you as soon as possible.']);
 
 } else {
-    echo json_encode(['error' => 'There was a problem with your submission, please try again.']);
+    echo json_encode(['error' => 'There was a problem with your submission, please refresh and try again.']);
 }
