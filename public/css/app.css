@@ -10526,6 +10526,8 @@ html,
 body {
   height: 100%;
   min-height: 100%;
+  font-family: "Nunito", "Arial", sans-serif;
+  font-display: swap;
 }
 
 .bg--darker {
@@ -10546,6 +10548,7 @@ body {
 
 .title {
   font-family: 'Butler', 'Times New Roman', serif;
+  font-display: swap;
   font-weight: 500;
   font-size: 3rem;
   font-style: italic;
@@ -10555,6 +10558,7 @@ body {
 
 .subtitle {
   font-family: 'Butler', 'Times New Roman', serif;
+  font-display: swap;
   font-weight: 600;
   font-size: 1.69rem;
 }
@@ -10642,6 +10646,18 @@ header .nav-link.active {
 
 .lang-list .lang-icon.phpstorm {
   background-image: url("/img/phpstorm.svg");
+}
+
+.lang-list .lang-icon.magento {
+  background-image: url("/img/magento.svg");
+}
+
+.lang-list .lang-icon.wordpress {
+  background-image: url("/img/wordpress.svg");
+}
+
+.lang-list .lang-icon.woocommerce {
+  background-image: url("/img/woocommerce.svg");
 }
 
 @media (min-width: 1200px) {

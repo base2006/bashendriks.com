@@ -32,17 +32,25 @@
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 mt-5">
-                    <h4 class="subtitle">Honorable mentions</h4>
+                    <h4 class="subtitle">CMS and Webshop</h4>
                     <ul class="lang-list">
-                        <li><i class="lang-icon git"></i> Git with Github (and CLI)</li>
-                        <li><i class="lang-icon centos"></i> CentOS</li>
-                        <li><i class="lang-icon plesk"></i> Plesk</li>
+                        <li><i class="lang-icon magento"></i> Magento 2 (basic setup and configuration)</li>
+                        <li><i class="lang-icon wordpress"></i> Wordpress</li>
+                        <li><i class="lang-icon woocommerce"></i> Woocommerce (with Wordpress)</li>
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 mt-5">
                     <h4 class="subtitle">Prefered editor</h4>
                     <ul class="lang-list">
                         <li><i class="lang-icon phpstorm"></i> PhpStorm</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 mt-5">
+                    <h4 class="subtitle">Honorable mentions</h4>
+                    <ul class="lang-list">
+                        <li><i class="lang-icon git"></i> Git with Github (and CLI)</li>
+                        <li><i class="lang-icon centos"></i> CentOS</li>
+                        <li><i class="lang-icon plesk"></i> Plesk</li>
                     </ul>
                 </div>
             </div>
