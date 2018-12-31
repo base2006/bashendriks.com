@@ -11,9 +11,9 @@ class MailController extends Controller
 {
     public function sendContactform(Request $request) {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|alpha',
+            'name' => 'required|string',
             'email' => 'required|email',
-            'message' => 'required|string|alpha',
+            'message' => 'required|string',
             'g-recaptcha-response' => 'required|captcha',
         ]);
 
