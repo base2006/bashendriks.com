@@ -56,4 +56,16 @@
             </div>
         </div>
     </div>
+    <div id="contact" class="row mvh-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="subtitle my-4">Get in touch!</h3>
+                </div>
+                <div class="col-12">
+                    @include('partials.contactform')
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

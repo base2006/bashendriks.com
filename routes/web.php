@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::post('/send-contactform', 'MailController@sendContactform')->name('contactform.send');

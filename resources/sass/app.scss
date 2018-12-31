@@ -82,46 +82,66 @@ header {
         &.bootstrap {
             background-image: url("/img/bootstrap-4.svg");
         }
+
         &.js {
             background-image: url("/img/javascript.svg");
         }
+
         &.jquery {
             background-image: url("/img/jquery.svg");
         }
+
         &.scss {
             background-image: url("/img/sass.svg");
         }
+
         &.react {
             background-image: url("/img/react.svg");
             filter: grayscale(1);
         }
+
         &.php {
             background-image: url("/img/php.svg");
         }
+
         &.laravel {
             background-image: url("/img/laravel.svg");
         }
+
         &.git {
             background-image: url("/img/git.svg");
         }
+
         &.centos {
             background-image: url("/img/centos.svg");
         }
+
         &.plesk {
             background-image: url("/img/plesk.svg");
         }
+
         &.phpstorm {
             background-image: url("/img/phpstorm.svg");
         }
+
         &.magento {
             background-image: url("/img/magento.svg");
         }
+
         &.wordpress {
             background-image: url("/img/wordpress.svg");
         }
+
         &.woocommerce {
             background-image: url("/img/woocommerce.svg");
         }
+    }
+}
+
+#contact {
+    .g-recaptcha {
+        transform: scale(0.96);
+        transform-origin: 0 0;
     }
 }
 
